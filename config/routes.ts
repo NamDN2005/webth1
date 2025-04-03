@@ -36,6 +36,12 @@
 		component: './RandomUser',
 		icon: 'ArrowsAltOutlined',
 	},
+	{
+		path: '/courses',
+		name: 'Quản lý khóa học',
+		icon: 'BookOutlined',
+		component: './courses',
+	  },
 
 	// DANH MUC HE THONG
 	// {
