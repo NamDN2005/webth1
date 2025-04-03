@@ -63,9 +63,9 @@ const CoursePage: React.FC = () => {
       dataIndex: 'instructor',
     },
     {
-      title: 'Số học viên',
-      dataIndex: 'studentCount',
-      sorter: (a: Course, b: Course) => a.studentCount - b.studentCount,
+      title: 'Số lượng học viên',
+      dataIndex: 'numberOfStudents', // Sử dụng đúng tên trường
+      sorter: (a: Course, b: Course) => (a.numberOfStudents || 0) - (b.numberOfStudents || 0),
     },
     {
       title: 'Trạng thái',

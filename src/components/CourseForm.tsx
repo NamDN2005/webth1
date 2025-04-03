@@ -85,6 +85,25 @@ const CourseForm: React.FC<CourseFormProps> = ({
             <Select.Option value="paused">Tạm dừng</Select.Option>
           </Select>
         </Form.Item>
+
+        <Form.Item
+          name="numberOfStudents"
+          label="Số lượng học viên"
+          rules={[
+            { required: true, message: 'Vui lòng nhập số lượng học viên' },
+            { type: 'number', min: 1, message: 'Số lượng học viên phải lớn hơn 0' }
+          ]}
+        >
+          <Input
+            type="number"
+            onChange={(e) => {
+              const value = parseInt(e.target.value, 10);
+              if (!isNaN(value)) {
+                form.setFieldsValue({ numberOfStudents: value });
+              }
+            }}
+          />
+        </Form.Item>
       </Form>
     </Modal>
   );

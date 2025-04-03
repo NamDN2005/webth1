@@ -12,9 +12,8 @@ export interface Course {
   id: string;
   name: string;
   instructor: string;
-  description: string;
-  studentCount: number;
   status: 'active' | 'completed' | 'paused';
+  numberOfStudents?: number; // Added the missing property
 }
 
 export default () => {
@@ -87,7 +86,7 @@ export default () => {
   const deleteCourse = (id: string) => {
     try {
       const course = courses.find(c => c.id === id);
-      if (course?.studentCount && course.studentCount > 0) {
+      if (course?.numberOfStudents && course.numberOfStudents > 0) {
         message.error('Không thể xóa khóa học đã có học viên');
         return false;
       }
